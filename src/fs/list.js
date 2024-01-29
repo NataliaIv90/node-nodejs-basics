@@ -1,5 +1,18 @@
+import { existsSync, readdirSync } from 'node:fs';
+
 const list = async () => {
-    // Write your code here 
+    const folderName = './files';
+
+    try {
+        if (!existsSync(folderName)) {
+            throw new Error('FS operation failed');
+        }
+
+        let filenames = readdirSync(folderName);
+        console.log(filenames);
+    } catch (err) {
+        console.log(err.message);
+    }
 };
 
 await list();
