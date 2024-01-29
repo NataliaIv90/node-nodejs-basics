@@ -9,7 +9,7 @@ const create = async () => {
         const content = 'I am fresh and young';
         await writeFile('files/fresh.txt', content);
     } catch (err) {
-        console.log(err);
+        console.log(err.message);
     }
 };
 
