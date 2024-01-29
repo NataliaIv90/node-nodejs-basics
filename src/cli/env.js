@@ -1,5 +1,10 @@
+import dotenv from 'dotenv';
+dotenv.config();
+
 const parseEnv = () => {
-    // Write your code here 
+    Object.entries(process.env)
+        .map(([key, value]) => console.log(`RSS_${key}=${value}/n`))
 };
+
 
 parseEnv();
